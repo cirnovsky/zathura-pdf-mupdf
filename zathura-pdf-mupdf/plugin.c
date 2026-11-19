@@ -27,6 +27,12 @@ ZATHURA_PLUGIN_REGISTER_WITH_FUNCTIONS("pdf-mupdf", VERSION_MAJOR, VERSION_MINOR
                                            .page_render_cairo        = pdf_page_render_cairo,
                                            .page_image_get_cairo     = pdf_page_image_get_cairo,
                                            .page_get_label           = pdf_page_get_label,
+                                           .page_get_chars           = pdf_page_get_chars,
+                                           .page_get_annotations     = pdf_page_get_annotations,
+                                           .page_add_highlight       = pdf_page_add_highlight,
+                                           .page_set_annotation_contents = pdf_page_set_annotation_contents,
+                                           .page_delete_annotation   = pdf_page_delete_annotation,
+                                           .document_save            = pdf_document_save,
                                        }),
                                        ZATHURA_PLUGIN_MIMETYPES({
                                            PDF_MIMETYPE "application/oxps",

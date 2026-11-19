@@ -195,4 +195,17 @@ zathura_error_t pdf_page_get_label(zathura_page_t* page, void* data, char** labe
  */
 zathura_error_t pdf_page_render_cairo(zathura_page_t* page, void* mupdf_page, cairo_t* cairo, bool printing);
 
+girara_list_t* pdf_page_get_chars(zathura_page_t* page, void* mupdf_page, zathura_error_t* error);
+
+girara_list_t* pdf_page_get_annotations(zathura_page_t* page, void* mupdf_page, zathura_error_t* error);
+
+int pdf_page_add_highlight(zathura_page_t* page, void* mupdf_page, girara_list_t* rectangles, const double color[3],
+                           const char* contents, const char* author, zathura_error_t* error);
+
+zathura_error_t pdf_page_set_annotation_contents(zathura_page_t* page, void* mupdf_page, int id, const char* contents);
+
+zathura_error_t pdf_page_delete_annotation(zathura_page_t* page, void* mupdf_page, int id);
+
+zathura_error_t pdf_document_save(zathura_document_t* document, void* mupdf_document, bool* needs_reload);
+
 #endif // PDF_H
